@@ -1,0 +1,45 @@
+{
+ "schema": "research-suite/synthesis@1",
+ "title": "Fixture review",
+ "question": "Does method A beat method B?",
+ "author": "Tester",
+ "summary": "A and B are close [@fixture2010paper; @fixture2011paper], with one null result [@fixture2012paper].",
+ "takeaways": [
+  "Cost rises with A [@fixture2013paper]."
+ ],
+ "themes": [
+  {
+   "name": "Accuracy",
+   "summary": "Mixed [@fixture2010paper] vs [@fixture2011paper].",
+   "papers": [
+    "fixture2010paper",
+    "fixture2011paper",
+    "fixture2012paper"
+   ]
+  },
+  {
+   "name": "Cost",
+   "summary": "Higher [@fixture2013paper; @fixture2014paper].",
+   "papers": [
+    "fixture2013paper",
+    "fixture2014paper"
+   ]
+  }
+ ],
+ "debates": [
+  {
+   "topic": "method a | method b",
+   "summary": "Same dataset, opposite results [@fixture2010paper] vs [@fixture2011paper].",
+   "pairs": [
+    "C001~C002"
+   ]
+  }
+ ],
+ "open_questions": [
+  "Does it hold at scale?"
+ ],
+ "methods_note": "Fixture data.",
+ "annotations": {
+  "fixture2010paper": "First fixture."
+ }
+}
