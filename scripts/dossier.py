@@ -169,6 +169,11 @@ def short_ref(p: dict) -> str:
     return f"{who} ({p.get('year') or 'n.d.'}). {p.get('title', '')}"
 
 
+def author_year(p: dict) -> str:
+    """"Naidu et al. (2021)" — the "Author (Year)" part of short_ref."""
+    return short_ref(p).split(f" ({p.get('year') or 'n.d.'})")[0] + f" ({p.get('year') or 'n.d.'})"
+
+
 def apa(p: dict) -> tuple[str, str]:
     """(html, markdown) reference in an APA-like style."""
     au = [a for a in (p.get("authors") or []) if a]
@@ -331,7 +336,7 @@ def cmd_build(a) -> None:
                 cx, cy = cmap[x], cmap[y]
                 pairs_html += ('<div class="vs">' + "".join(
                     f'<div class="side"><div class="who"><span class="g {esc(c.get("direction"))}">{GLYPH.get(c.get("direction"), "")}</span> '
-                    f'{esc(short_ref(papers[c["paper"]]).split(". ")[0])} <sup class="cite">[{N.n(c["paper"])}]</sup></div>'
+                    f'{esc(author_year(papers[c["paper"]]))} <sup class="cite">[{N.n(c["paper"])}]</sup></div>'
                     f'<div>{esc(c.get("statement", ""))}</div>'
                     f'<div class="ctx">{esc(" · ".join(v for v in [c.get("population"), c.get("dataset"), c.get("method")] + list(c.get("conditions") or []) if v))}</div></div>'
                     for c in (cx, cy)) + "</div>")

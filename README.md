@@ -4,6 +4,18 @@ Turn a set of papers into a documented, visual, citation-checked literature revi
 
 A free, open-source [agent skill](https://www.agensi.io/learn/skill-md-format) (SKILL.md) for students and researchers. Works with Claude Code, Codex CLI, Cursor, Gemini CLI and any agent that supports the SKILL.md standard.
 
+## Screenshots
+
+![Dossier cover, short answer and numbered citations](docs/screenshots/cover.png)
+
+| Charts: papers per year, venues, themes | Debates with the claims side by side |
+|---|---|
+| ![Charts](docs/screenshots/charts.png) | ![Debates section](docs/screenshots/debates.png) |
+| **Themes (dark mode)** | **Mobile** |
+| ![Themes in dark mode](docs/screenshots/themes-dark.png) | <img src="docs/screenshots/mobile.png" alt="Mobile view" width="260"> |
+
+*Real output, not a mock-up:* a run on the question **“How are galaxy merger histories reconstructed from stellar data?”** (OpenAlex + arXiv, 114 papers). The files are in [`examples/milky-way-mergers/`](examples/milky-way-mergers/) — download `dossier.html` and open it in a browser.
+
 ## What it does
 
 The agent writes the synthesis (answer, takeaways, themes, debates, open questions, annotations) into `synthesis.json`, citing papers only as `[@key]`. `scripts/dossier.py` then:
